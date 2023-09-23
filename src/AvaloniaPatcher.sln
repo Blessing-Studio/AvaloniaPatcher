@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaPatcher", "AvaloniaPatcher\AvaloniaPatcher.csproj", "{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaPatcher", "AvaloniaPatcher\AvaloniaPatcher.csproj", "{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestProject", "TestProject", "{66E4BCC6-5F52-4CB0-A5CB-C4B58EBC59BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2251E15B-364E-49AC-9128-BD94C4EE6318}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplication", "..\TestProject\AvaloniaApplication\AvaloniaApplication.csproj", "{366764CC-FB8C-480D-81B4-2CD470AF74EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplication.Desktop", "..\TestProject\AvaloniaApplication.Desktop\AvaloniaApplication.Desktop.csproj", "{8055F22F-A534-41F3-8162-68C861E09814}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatchTests", "..\Tests\TestProject1\PatchTests.csproj", "{14E0E60A-D087-494D-9CE6-371CE249F126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,26 @@ Global
 		{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{366764CC-FB8C-480D-81B4-2CD470AF74EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366764CC-FB8C-480D-81B4-2CD470AF74EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366764CC-FB8C-480D-81B4-2CD470AF74EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366764CC-FB8C-480D-81B4-2CD470AF74EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8055F22F-A534-41F3-8162-68C861E09814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8055F22F-A534-41F3-8162-68C861E09814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8055F22F-A534-41F3-8162-68C861E09814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8055F22F-A534-41F3-8162-68C861E09814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E0E60A-D087-494D-9CE6-371CE249F126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E0E60A-D087-494D-9CE6-371CE249F126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E0E60A-D087-494D-9CE6-371CE249F126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E0E60A-D087-494D-9CE6-371CE249F126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{366764CC-FB8C-480D-81B4-2CD470AF74EC} = {66E4BCC6-5F52-4CB0-A5CB-C4B58EBC59BA}
+		{8055F22F-A534-41F3-8162-68C861E09814} = {66E4BCC6-5F52-4CB0-A5CB-C4B58EBC59BA}
+		{14E0E60A-D087-494D-9CE6-371CE249F126} = {2251E15B-364E-49AC-9128-BD94C4EE6318}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72E9D03B-0A75-4906-B462-05DECF844C42}
