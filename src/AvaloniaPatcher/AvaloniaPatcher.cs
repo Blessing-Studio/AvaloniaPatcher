@@ -31,7 +31,7 @@ namespace AvaloniaPatcher
                 {
                     foreach(ConstructorInfo constructor in type.GetConstructors())
                     {
-                        Harmony.Patch(constructor, postfix: new(Patches.Patch.GetPostfixMethodInfo()));
+                        Harmony.Patch(constructor, postfix: new(Patches.Patches.GetPostfixMethodInfo()));
                     }
                     InitedTypes.Add(type);
                 }

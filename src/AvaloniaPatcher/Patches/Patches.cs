@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AvaloniaPatcher.Patches
 {
-    public static class Patch
+    public static class Patches
     {
         public static void Postfix(object __instance)
         {
@@ -21,7 +21,7 @@ namespace AvaloniaPatcher.Patches
         }
         public static MethodInfo GetPostfixMethodInfo()
         {
-            MethodInfo method = typeof(Patch).GetMethod("Postfix")!;
+            MethodInfo method = typeof(Patches).GetMethod("Postfix")!;
             return method;
         }
     }
