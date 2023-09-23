@@ -20,6 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AvaloniaPatcher\AvaloniaPatcher.csproj" />
+    <ProjectReference Include="..\..\src\AvaloniaPatcher\BlessingStudio.AvaloniaPatcher.csproj" />
   </ItemGroup>
 </Project>

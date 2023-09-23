@@ -3,7 +3,6 @@ using System.Reflection;
 using Avalonia;
 using Avalonia.ReactiveUI;
 using AvaloniaApplication.Views;
-using AvaloniaPatcher;
 
 namespace AvaloniaApplication.Desktop;
 
@@ -15,7 +14,7 @@ class Program
     [STAThread]
     public static void Main(string[] args)
     {
-        AvaloniaPatcher.AvaloniaPatcher.Init(Assembly.GetAssembly(typeof(MainView))!);
+        BlessingStudio.AvaloniaPatcher.AvaloniaPatcher.Init(Assembly.GetAssembly(typeof(MainView))!);
         BuildAvaloniaApp()
         .StartWithClassicDesktopLifetime(args);
     }

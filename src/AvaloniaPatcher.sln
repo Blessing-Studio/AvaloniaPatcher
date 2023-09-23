@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaPatcher", "AvaloniaPatcher\AvaloniaPatcher.csproj", "{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlessingStudio.AvaloniaPatcher", "AvaloniaPatcher\BlessingStudio.AvaloniaPatcher.csproj", "{982AC7F3-EFE3-4B46-834D-0CEDA56DDB3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestProject", "TestProject", "{66E4BCC6-5F52-4CB0-A5CB-C4B58EBC59BA}"
 EndProject

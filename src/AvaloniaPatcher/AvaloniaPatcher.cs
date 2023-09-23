@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using BlessingStudio.AvaloniaPatcher.Events;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
@@ -7,10 +8,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AvaloniaPatcher
+namespace BlessingStudio.AvaloniaPatcher
 {
     public static class AvaloniaPatcher
     {
+        public static event Events.EventHandler<ControlLoadedEvent>? OnControlLoadedEvent;
         private static List<Assembly> InitedAssemblies = new();
         private static List<Type> InitedTypes = new();
         public static Dictionary<Type, Control> InstancesOfControls = new();
@@ -25,18 +27,28 @@ namespace AvaloniaPatcher
         }
         public static void Init(Assembly assembly)
         {
-            foreach(Type type in assembly.GetTypes())
+            foreach (Type type in assembly.GetTypes())
             {
                 if (type.IsSubclassOf(typeof(Control)) && !IsInitedType(type))
                 {
-                    foreach(ConstructorInfo constructor in type.GetConstructors())
+                    foreach (ConstructorInfo constructor in type.GetConstructors())
                     {
                         Harmony.Patch(constructor, postfix: new(Patches.Patches.GetPostfixMethodInfo()));
                     }
                     InitedTypes.Add(type);
                 }
-            }InitedAssemblies.Add(assembly);
+            }
+            InitedAssemblies.Add(assembly);
         }
 
+
+
+        public static void CallControlLoadedEvent(ControlLoadedEvent @event)
+        {
+            if (OnControlLoadedEvent != null)
+            {
+                OnControlLoadedEvent(@event);
+            }
+        }
     }
 }

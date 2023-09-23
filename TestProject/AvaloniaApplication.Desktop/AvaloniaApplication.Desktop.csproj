@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AvaloniaPatcher\AvaloniaPatcher.csproj" />
+    <ProjectReference Include="..\..\src\AvaloniaPatcher\BlessingStudio.AvaloniaPatcher.csproj" />
     <ProjectReference Include="..\AvaloniaApplication\AvaloniaApplication.csproj" />
   </ItemGroup>
 </Project>
