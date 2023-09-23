@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace AvaloniaPatcher.Events
 {
-    public delegate void EventHadler<T>(T e) where T : IEvent;
+    public delegate void EventHandler<T>(T e) where T : IEvent;
 }
