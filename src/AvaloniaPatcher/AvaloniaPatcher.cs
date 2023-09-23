@@ -1,12 +1,7 @@
 ﻿using Avalonia.Controls;
 using BlessingStudio.AvaloniaPatcher.Events;
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlessingStudio.AvaloniaPatcher
 {
@@ -16,6 +11,7 @@ namespace BlessingStudio.AvaloniaPatcher
         private static List<Assembly> InitedAssemblies = new();
         private static List<Type> InitedTypes = new();
         public static Dictionary<Type, Control> InstancesOfControls = new();
+        public static Dictionary<Type, List<Patch>> LoadedPatches = new();
         public static Harmony Harmony { get; private set; } = new("BlesaingStudio.AvaloniaPatcher");
         public static bool IsInitedAssembly(Assembly assembly)
         {
@@ -39,6 +35,14 @@ namespace BlessingStudio.AvaloniaPatcher
                 }
             }
             InitedAssemblies.Add(assembly);
+        }
+        public static void Patch(Type type, Patch patch)
+        {
+            if (!LoadedPatches.ContainsKey(type))
+            {
+                LoadedPatches[type] = new();
+            }
+            LoadedPatches[type].Add(patch);
         }
 
 
