@@ -30,6 +30,11 @@ namespace BlessingStudio.AvaloniaPatcher.Patches
                             MethodInfo methodInfo = tmp.GetType().GetMethod("Add")!;
                             methodInfo.Invoke(tmp, new object[] { addPatch.GetContext() });
                         }
+                        else if(patch is EditPatch editPatch)
+                        {
+                            Control tmp = ContentLocationUtils.GetValue(control, editPatch.GetContentLocation().Location);
+                            editPatch.OnEdit(tmp);
+                        }
                     }
                 }
                 AvaloniaPatcher.CallControlLoadedEvent(new Events.ControlLoadedEvent(control));

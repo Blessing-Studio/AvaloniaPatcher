@@ -1,5 +1,7 @@
 ﻿using Avalonia.Controls;
 using BlessingStudio.AvaloniaPatcher.Events;
+using BlessingStudio.AvaloniaPatcher.Public;
+using BlessingStudio.AvaloniaPatcher.Utils;
 using HarmonyLib;
 using System.Reflection;
 
@@ -42,7 +44,20 @@ namespace BlessingStudio.AvaloniaPatcher
             {
                 LoadedPatches[type] = new();
             }
-            LoadedPatches[type].Add(patch);
+            LoadedPatches[type].Add(patch); if (InstancesOfControls.ContainsKey(type))
+            {
+                if (patch is AddPatch addPatch)
+                {
+                    object tmp = ContentLocationUtils.GetValue(InstancesOfControls[type], addPatch.GetContentLocation().Location);
+                    MethodInfo methodInfo = tmp.GetType().GetMethod("Add")!;
+                    methodInfo.Invoke(tmp, new object[] { addPatch.GetContext() });
+                }
+                else if (patch is EditPatch editPatch)
+                {
+                    Control tmp = ContentLocationUtils.GetValue(InstancesOfControls[type], editPatch.GetContentLocation().Location);
+                    editPatch.OnEdit(tmp);
+                }
+            }
         }
 
 

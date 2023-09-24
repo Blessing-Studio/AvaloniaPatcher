@@ -15,6 +15,7 @@ class Program
     public static void Main(string[] args)
     {
         BlessingStudio.AvaloniaPatcher.AvaloniaPatcher.Init(Assembly.GetAssembly(typeof(MainView))!);
+        BlessingStudio.AvaloniaPatcher.AvaloniaPatcher.Patch(typeof(MainWindow), new TestPatch1());
         BuildAvaloniaApp()
         .StartWithClassicDesktopLifetime(args);
     }
